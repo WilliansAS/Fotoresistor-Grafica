@@ -2,17 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gráfica en Tiempo Real con PHP y Chart.js</title>
+    <title>Visualización de Datos con LEDs</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            align-items: flex-start; /* Alinea los elementos al inicio */
+            max-width: 1000px; /* Define un ancho máximo para evitar desbordamiento */
+            width: 100%;
+        }
+
+        #chart-container {
+            flex: 1; /* Hace que este contenedor ocupe el espacio disponible */
+            margin-right: 20px;
+        }
+
+        #led-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .led-image {
+            width: 80px; /* Ajusta el tamaño según sea necesario */
+            margin-bottom: 30px;
+            transition: opacity 0.5s ease; /* Agrega transición para un cambio suave */
+        }   
+
+      
+    </style>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    
 </head>
 <body>
-    <div>
-        <canvas id="myChart"></canvas>
+    <div id="container">
+
+        <div id="chart-container">
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+
+        <div id="led-container">
+            <img id="led1" class="led-image led-off" src="IMG/ROJO-OFF.png" alt="LED 1">
+            <img id="led2" class="led-image led-off" src="IMG/AMARILLO-OFF.png" alt="LED 2">
+            <img id="led3" class="led-image led-off" src="IMG/VERDE-OFF.png" alt="LED 3">
+        </div>
+        
     </div>
-
-    <script src="script.js">
-
-    </script>
 </body>
 </html>
